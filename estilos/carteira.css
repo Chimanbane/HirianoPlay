@@ -1,0 +1,43 @@
+/* Wallet Specific Styles */
+.wallet-header-card {
+    background: var(--binance-black);
+    color: white;
+    margin: 15px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.total-label { font-size: 0.75rem; opacity: 0.7; display: flex; align-items: center; gap: 8px; }
+.wallet-header-card h2 { font-size: 1.8rem; margin: 8px 0; letter-spacing: 1px; }
+.balance-converted { font-size: 0.8rem; opacity: 0.6; margin-bottom: 20px; }
+
+.wallet-actions { display: flex; gap: 10px; }
+.wallet-actions button {
+    flex: 1; border: none; padding: 10px; border-radius: 8px;
+    font-weight: 600; font-size: 0.8rem; cursor: pointer;
+}
+
+.btn-deposit { background: var(--binance-yellow); color: var(--binance-black); }
+.btn-withdraw, .btn-transfer { background: #2B3139; color: white; }
+
+.assets-section { padding: 0 15px; margin-top: 25px; }
+.asset-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 0; border-bottom: 1px solid var(--border-color);
+}
+
+.asset-info { display: flex; gap: 12px; align-items: center; }
+.asset-logo {
+    width: 40px; height: 40px; background: var(--bg-subtle);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--text-main);
+}
+.asset-logo.yellow { color: var(--binance-yellow); }
+.asset-info h4 { font-size: 0.9rem; }
+.asset-info span { font-size: 0.7rem; color: var(--text-secondary); }
+
+.asset-value { text-align: right; }
+.asset-value h4 { font-size: 0.9rem; }
+.asset-value span { font-size: 0.7rem; color: var(--text-secondary); }
+.asset-value span.green { color: var(--green-success); }
