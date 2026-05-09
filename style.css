@@ -1,0 +1,175 @@
+:root {
+    --binance-yellow: #FCD535;
+    --binance-black: #181A20;
+    --bg-light: #FFFFFF;
+    --bg-subtle: #FAFAFA;
+    --border-color: #EAECEF;
+    --text-main: #1E2329;
+    --text-secondary: #707A8A;
+    --green-success: #0ECB81;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    padding-bottom: 90px;
+}
+
+/* Ajuste no Header para remover a borda inferior (a barra de ganhadores fará a divisão) */
+.top-nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: 70px;
+    background: white;
+    z-index: 1001; /* Maior que a barra */
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: none; /* Removido */
+}
+
+/* Barra de Ganhadores */
+.winners-ticker {
+    position: fixed;
+    top: 70px; /* Logo abaixo do header */
+    left: 0; width: 100%;
+    height: 35px;
+    background: #FFFCEB; /* Tom de amarelo bem clarinho Binance */
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    overflow: hidden; /* Esconde o que sai da tela */
+    display: flex; align-items: center;
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    gap: 50px;
+    padding-left: 20px;
+    animation: scroll-ticker 70s linear infinite; /* Ajuste a velocidade aqui */
+}
+
+.winner-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.winner-item i {
+    color: var(--green-success);
+    font-size: 0.8rem;
+}
+
+.winner-amount {
+    color: var(--green-success);
+    font-weight: 600;
+}
+
+/* Animação de Scroll */
+@keyframes scroll-ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Ajuste o padding do Main para acomodar Header + Barra */
+main {
+    padding-top: 115px; /* 70px (header) + 35px (barra) + folga */
+}
+
+
+.user-info { display: flex; align-items: center; gap: 10px; }
+.avatar { 
+    width: 35px; height: 35px; background: var(--bg-subtle); 
+    border-radius: 50%; display: flex; align-items: center; 
+    justify-content: center; color: var(--text-secondary);
+}
+
+.user-text { display: flex; flex-direction: column; }
+.welcome { font-size: 0.65rem; color: var(--text-secondary); }
+.username { font-size: 0.85rem; font-weight: 600; }
+
+.wallet-badge {
+    background: var(--bg-subtle); padding: 6px 12px;
+    border-radius: 8px; display: flex; align-items: center; gap: 5px;
+    font-weight: 600; font-size: 0.9rem;
+}
+.currency { color: var(--text-secondary); font-size: 0.75rem; }
+
+/* Banner */
+.banner {
+    background: var(--binance-yellow);
+    margin: 20px 15px; border-radius: 16px;
+    padding: 25px 20px; color: var(--binance-black);
+}
+.banner h2 { font-size: 1.3rem; margin-bottom: 5px; }
+.banner p { font-size: 0.8rem; opacity: 0.8; margin-bottom: 15px; }
+.btn-action {
+    background: var(--binance-black); color: white;
+    border: none; padding: 8px 16px; border-radius: 8px;
+    font-weight: 500; font-size: 0.8rem;
+}
+
+/* Section Titles */
+.section-header {
+    display: flex; justify-content: space-between; 
+    padding: 0 15px; margin-bottom: 15px; align-items: center;
+}
+.section-header h3 { font-size: 1rem; }
+.section-header span { font-size: 0.75rem; color: var(--binance-yellow); font-weight: 600; background: #fef6d8; padding: 2px 8px; border-radius: 4px; }
+
+/* Game Cards */
+.game-grid { display: flex; flex-direction: column; gap: 12px; padding: 0 15px; }
+
+.game-card {
+    display: flex; align-items: center; gap: 15px;
+    padding: 15px; background: white;
+    border: 1px solid var(--border-color); border-radius: 12px;
+    transition: 0.2s;
+}
+.game-card:active { background: var(--bg-subtle); transform: scale(0.98); }
+
+.card-icon {
+    width: 45px; height: 45px; background: #FFF9E6;
+    border-radius: 10px; display: flex; align-items: center;
+    justify-content: center; color: var(--binance-yellow); font-size: 1.2rem;
+}
+
+.card-info { flex: 1; }
+.card-info h3 { font-size: 0.9rem; }
+.card-info p { font-size: 0.7rem; color: var(--text-secondary); }
+
+.game-badge {
+    font-size: 0.75rem; font-weight: 600; color: var(--green-success);
+}
+
+/* Bottom Menu */
+.bottom-menu {
+    position: fixed; bottom: 0; width: 100%; height: 75px;
+    background: white; border-top: 1px solid var(--border-color);
+    display: flex; justify-content: space-around; align-items: center;
+}
+
+.menu-item {
+    display: flex; flex-direction: column; align-items: center;
+    color: var(--text-secondary); transition: 0.2s;
+}
+.menu-item i { font-size: 1.2rem; margin-bottom: 4px; }
+.menu-item span { font-size: 0.65rem; }
+
+.menu-item.active { color: var(--text-main); }
+.menu-item.active i { color: var(--binance-yellow); }
+
+/* Empty State */
+.view { display: none; }
+.view.active { display: block; }
+.empty-state { text-align: center; margin-top: 100px; color: var(--text-secondary); }
+.empty-state i { font-size: 3rem; margin-bottom: 15px; display: block; }
+.btn-back { background: var(--binance-yellow); border: none; padding: 10px 20px; border-radius: 8px; margin-top: 20px; font-weight: 600; }
