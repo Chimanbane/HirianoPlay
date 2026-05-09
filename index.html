@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HirianoPlay | Binance Style</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="estilos/footer.css">
+    <link rel="stylesheet" href="estilos/carteira.css">
+</head>
+<body>
+
+    <header class="top-nav">
+        <div class="user-info">
+            <div class="avatar"><i class="fi fi-rr-user"></i></div>
+            <div class="user-text">
+                <span class="welcome">Bem-vindo</span>
+                <span class="username">Iriano Chimanbane</span>
+            </div>
+        </div>
+        <div class="wallet-badge">
+            <span class="currency">MT</span>
+            <span id="balance-display">0,00</span>
+            <i class="fi fi-rr-angle-small-right"></i>
+        </div>
+    </header>
+    
+    <div class="winners-ticker">
+    <div class="ticker-content" id="ticker-content">
+        </div>
+</div>
+
+
+    <main id="main-content" class="app-container">
+        
+        <div id="home-view" class="view active">
+            <section class="banner">
+                <div class="banner-content">
+                    <h2>Ganhe Dinheiro Jogando <span>🚀</span></h2>
+                    <p>Desafios diários com recompensas reais.</p>
+                    <button class="btn-action">Começar agora</button>
+                </div>
+            </section>
+
+            <div class="section-header">
+                <h3>Mercado de Jogos</h3>
+                <span>Ver todos</span>
+            </div>
+
+            <div class="game-grid">
+                <div class="game-card" onclick="openGame('spin')">
+                    <div class="card-icon"><i class="fi fi-rr-rotate-right"></i></div>
+                    <div class="card-info">
+                        <h3>Giro da Sorte</h3>
+                        <p>Hot Reward</p>
+                    </div>
+                    <span class="game-badge">+0.50 MT</span>
+                </div>
+
+                <div class="game-card" onclick="openGame('cards')">
+                    <div class="card-icon"><i class="fi fi-rr-layers"></i></div>
+                    <div class="card-info">
+                        <h3>Cartas Reais</h3>
+                        <p>Estratégia</p>
+                    </div>
+                    <span class="game-badge">+1.20 MT</span>
+                </div>
+
+                <div class="game-card" onclick="openGame('quiz')">
+                    <div class="card-icon"><i class="fi fi-rr-interrogation"></i></div>
+                    <div class="card-info">
+                        <h3>Quiz Master</h3>
+                        <p>Conhecimento</p>
+                    </div>
+                    <span class="game-badge">+0.80 MT</span>
+                </div>
+
+                <div class="game-card" onclick="openGame('arcade')">
+                    <div class="card-icon"><i class="fi fi-rr-gamepad"></i></div>
+                    <div class="card-info">
+                        <h3>Mini Games</h3>
+                        <p>Arcade</p>
+                    </div>
+                    <span class="game-badge">New</span>
+                </div>
+            </div>
+            
+            <footer class="main-footer">
+    <div class="footer-brand">
+        <span class="footer-logo">Hiriano<span>Play</span></span>
+        <p>A plataforma líder em entretenimento e recompensas digitais em Moçambique.</p>
+    </div>
+    
+    <div class="footer-links">
+        <div class="link-group">
+            <h4>Suporte</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Ajuda ao Vivo</a>
+            <a href="#">Taxas</a>
+        </div>
+        <div class="link-group">
+            <h4>Legal</h4>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-icons">
+            <i class="fi fi-rr-facebook"></i>
+            <i class="fi fi-rr-instagram"></i>
+            <i class="fi fi-rr-paper-plane"></i>
+        </div>
+        <p>© 2026 HirianoDevs. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+        </div>
+
+        <div id="empty-view" class="view">
+            <div class="empty-state">
+                <i class="fi fi-rr-box-open"></i>
+                <h3>Nada por aqui ainda</h3>
+                <p>Esta funcionalidade está sendo preparada para você.</p>
+                <button class="btn-back" onclick="navigate('home')">Voltar ao Início</button>
+            </div>
+        </div>
+        
+        
+        <div id="wallet-view" class="view">
+    <div class="wallet-header-card">
+        <span class="total-label">Saldo Total Estimado <i class="fi fi-rr-eye"></i></span>
+        <h2 id="wallet-balance">MT 0,00</h2>
+        <p class="balance-converted">≈ $ 0,00</p>
+        
+        <div class="wallet-actions">
+            <button class="btn-deposit"><i class="fi fi-rr-plus-small"></i> Depositar</button>
+            <button class="btn-withdraw">Levantar</button>
+            <button class="btn-transfer">Transferir</button>
+        </div>
+    </div>
+
+    <div class="assets-section">
+        <div class="section-header">
+            <h3>Suas Moedas</h3>
+            <i class="fi fi-rr-search"></i>
+        </div>
+        
+        <div class="asset-item">
+            <div class="asset-info">
+                <div class="asset-logo"><i class="fi fi-rr-coins"></i></div>
+                <div>
+                    <h4>Metical (MTN)</h4>
+                    <span>Moeda Local</span>
+                </div>
+            </div>
+            <div class="asset-value">
+                <h4 id="asset-mtn">0,00</h4>
+                <span>MT 1.00</span>
+            </div>
+        </div>
+
+        <div class="asset-item">
+            <div class="asset-info">
+                <div class="asset-logo yellow"><i class="fi fi-rr-diamond"></i></div>
+                <div>
+                    <h4>Hiriano Points</h4>
+                    <span>HRP</span>
+                </div>
+            </div>
+            <div class="asset-value">
+                <h4>550.20</h4>
+                <span class="green">+12%</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+    </main>
+
+    <nav class="bottom-menu">
+        <div class="menu-item active" onclick="navigate('home', this)">
+            <i class="fi fi-rr-apps"></i>
+            <span>Início</span>
+        </div>
+        <div class="menu-item" onclick="navigate('wallet', this)">
+            <i class="fi fi-rr-wallet"></i>
+            <span>Carteira</span>
+        </div>
+        <div class="menu-item" onclick="navigate('history', this)">
+            <i class="fi fi-rr-stats"></i>
+            <span>Trade</span>
+        </div>
+        <div class="menu-item" onclick="navigate('profile', this)">
+            <i class="fi fi-rr-settings"></i>
+            <span>Conta</span>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
